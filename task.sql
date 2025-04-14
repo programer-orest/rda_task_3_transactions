@@ -5,7 +5,7 @@ USE ShopDB;
 
 -- Start the transaction 
 START TRANSACTION; 
-
--- And some data should be created inside the transaction 
-
+UPDATE OrderItems SET Count = 1 WHERE ProductID = 1; 
+UPDATE Orders SET DATE = '2023-01-01' WHERE ID = 1;
+UPDATE Products SET WarehouseAmount = WarehouseAmount - 1 WHERE ID = 1;
 COMMIT; 

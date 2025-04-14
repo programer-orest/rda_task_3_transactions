@@ -5,7 +5,9 @@ USE ShopDB;
 
 -- Start the transaction 
 START TRANSACTION; 
-INSERT OrderItems SET Count = 1 AND ProductID = 1; 
-INSERT Orders SET DATE = '2023-01-01';
-INSERT Products SET WarehouseAmount = WarehouseAmount - 1;
+INSERT INTO OrderItems(ProductID, Count)
+VALUES('1','1') 
+INSERT INTO Orders(CustomerID, Date)
+VALUES('1', '2023-01-01') 
+UPDATE Product SET WarehouseAmount = WarehouseAmount - 1 WHERE ID = 1  ;
 COMMIT; 
